@@ -7,7 +7,6 @@ function ColorItem({color, changle ,setChangle}) {
             <div className="listitem">
                 <div className="item" style={{backgroundColor: color === changle ? color :'grey'}}
                 onClick={() => setChangle(color)}></div>
-                
             </div>
             
         </>
