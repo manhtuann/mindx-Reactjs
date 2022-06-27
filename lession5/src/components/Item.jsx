@@ -4,7 +4,7 @@ import '../css/item.css'
 function Item({ data,item }) {
 
     const [ischecked, setIsChecked] = useState(
-        new Array(data.length).fill(false)
+        new Array(item.length).fill(false)
     )
     console.log(ischecked);
     const handleOnChange = (position) => {
