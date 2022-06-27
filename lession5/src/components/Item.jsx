@@ -1,30 +1,41 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../css/item.css'
 
 function Item({ data, item }) {
 
-    const [ischecked, setIsChecked] = useState(
-        new Array(item.length).fill(false)
-    )
-    useEffect(() => {
-        if (item.length > ischecked.length) {
-            const old = [...ischecked];
+    // const [ischecked, setIsChecked] = useState(
+    //     new Array(item.length).fill(false)
+    // )
 
-            for (let i = ischecked.length; i < item.length; i++) {
-                old.push(false);
-            }
-            setIsChecked(old);
-        }
-    }, [ischecked, ischecked.length, item.length])
+    // useEffect(() => {
+    //     if (item.length > ischecked.length) {
+    //         const old = [...ischecked];
+
+    //         for (let i = ischecked.length; i < item.length; i++) {
+    //             old.push(false);
+    //         }
+    //         setIsChecked(old);
+    //     }
+    // }, [ischecked, ischecked.length, item.length])
+
+
+    const [ischecked, setIsChecked] = useState({});
 
     console.log(ischecked);
     const handleOnChange = (position) => {
-        const updatedChecked = ischecked.map((item, index) =>
-            index === position ? !item : item
-        );
-        setIsChecked(updatedChecked);
+        setIsChecked({
+            ...ischecked,
+            [position]: !ischecked[position],
+        });
+    };
 
-    }
+    // const handleOnChange = (position) => {
+    //     const updatedChecked = ischecked.map((item, index) =>
+    //         index === position ? !item : item
+    //     );
+    //     setIsChecked(updatedChecked);
+
+    // }
     return (
         <>
             {
@@ -33,7 +44,7 @@ function Item({ data, item }) {
                         <div key={index}  >
                             <input
                                 type="checkbox"
-                                id={'custom-check' - { index }}
+                                
                                 onChange={() => handleOnChange(index)}
                                 checked={ischecked[index]}
                             />
