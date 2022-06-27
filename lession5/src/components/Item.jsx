@@ -1,18 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../css/item.css'
 
-function Item({ data,item }) {
+function Item({ data, item }) {
 
     const [ischecked, setIsChecked] = useState(
         new Array(item.length).fill(false)
     )
+    useEffect(() => {
+        if (item.length > ischecked.length) {
+            const old = [...ischecked];
+
+            for (let i = ischecked.length; i < item.length; i++) {
+                old.push(false);
+            }
+            setIsChecked(old);
+        }
+    }, [ischecked, ischecked.length, item.length])
+
     console.log(ischecked);
     const handleOnChange = (position) => {
         const updatedChecked = ischecked.map((item, index) =>
             index === position ? !item : item
         );
         setIsChecked(updatedChecked);
-        
+
     }
     return (
         <>
