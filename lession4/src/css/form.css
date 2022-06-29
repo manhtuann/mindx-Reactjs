@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.login-background {
+    position: absolute;
+}
+.login-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.55);
+}
+.login-background img {
+    width: 100%;
+}
+.login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.login-header img {
+    height: 129px;
+    width: 184px;
+    margin-left: 30px;
+}
+.login-body {
+    position: absolute;
+    left: 33.3333%;
+    top: 92px;
+    background-color: rgba(0,0,0,.75);
+    padding: 60px 68px;
+    margin-bottom: 90px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+}
+.login-form-main {
+    max-width: 380px;
+}
+.login-form-main h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.text {
+    background-color: #333;
+    width: 100%;
+    border-radius: 4px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 17px;
+    padding-top: 18px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.text:not(:placeholder-shown)~.place,
+.text:focus~.place{
+    transform: translateY(-100%);
+    font-size: 12px;
+    transition: all ease 0.25s;
+}
+.text:not(:placeholder-shown)~.place-pass,
+.text:focus~.place-pass{
+    top: 38%;
+    font-size: 12px;
+    transition: all ease-in-out 0.25s;
+
+}
+.place {
+    left: 85px;
+    position: absolute;
+    top: calc( 25% + 12px);
+    color: #8c8c8c;
+    font-size: 16px;
+}
+.place-pass {
+    left: 85px;
+    position: absolute;
+    top: 41%;
+    color: #8c8c8c;
+    font-size: 16px;
+}
+.input-error {
+    display: none;
+}
+.btn-login {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: red;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin: 20px 0 10px 0;
+    cursor: pointer;
+}
+.form-help {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.login-remember-text,
+span {
+    color: #fff;
+}
+.logo img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+.singup-now {
+    color: #fff;
+}
