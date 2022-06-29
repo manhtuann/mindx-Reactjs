@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Footer({item}) {
+function Footer() {
     return (
         <>
-            <span>{item.length} tasks left</span>
+            <span>5 tasks left</span>
             <span>MINDX todoList</span>
         </>
     )
